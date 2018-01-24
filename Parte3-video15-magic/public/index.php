@@ -7,10 +7,13 @@ use Styde\User;
    'last_name'  => 'Cantos',
 ]); */
 $user = new User([
-    'full_name' => 'Jose Cantos'
+    'first_name' => 'Jose',
+    'last_name' => 'Cantos',
+    'nickname' => 'magregor',
 ]);
 //$user = new User();
 //$user->fullName = 'Jose Cantos';
-echo "<p>Bienvenido {$user->full_name}</p>";
+echo "<p>Nickname: {$user->nickname}</p>";
+echo "<p>Bienvenido {$user->first_name} {$user->last_name}</p>";
 
 
