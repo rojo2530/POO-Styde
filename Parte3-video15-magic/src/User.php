@@ -15,8 +15,20 @@ class User {
     }
     public function __get($name)
     {
-        return isset($this->attributes[$name])
-            ? $this->attributes[$name]
-            : null;
+        return $this->getAttribute($name);
+    }
+    public function getAttribute($name)
+    {
+        if (array_key_exists($name, $this->attributes)) {
+            return $this->attributes[$name];
+        }
+    }
+    public function __set($name, $value)
+    {
+        $this->setAttributes($name, $value);
+    }
+    public function setAttributes($name, $value)
+    {
+        $this->attributes[$name] = $value;
     }
 }

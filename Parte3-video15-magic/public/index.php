@@ -9,11 +9,13 @@ use Styde\User;
 $user = new User([
     'first_name' => 'Jose',
     'last_name' => 'Cantos',
-    'nickname' => 'magregor',
+
 ]);
 //$user = new User();
 //$user->fullName = 'Jose Cantos';
-echo "<p>Nickname: {$user->nickname}</p>";
+$user->nickname = 'magregor';
+var_dump($user);
+echo "<p>Nickname: {$user->getAttribute('nickname')}</p>";
 echo "<p>Bienvenido {$user->first_name} {$user->last_name}</p>";
 
 
